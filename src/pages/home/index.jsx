@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchSection } from "../../services/services";
 import { fetchSectionA } from "../../services/servicedois";
 import { fetchSectionMarcial } from "../../services/servicetres";
+import Card from "../../components/card";
 
 
 
@@ -38,42 +39,22 @@ function Home() {
             <div className="row">
                 {
                     filmes.map((e, i) => (
-                        <div className="col-md-4" key={i}>
-                            <h5>
-                                {e.Title}
-                            </h5>
-                            <p>{e.Year}</p>
-                            <p>{e.Type}</p>
-                            <img src={e.Poster} />
-                        </div>
+                       <Card filmes={e} key={i}/>
                     ))
                 }
             </div>
             <div className="row">
                 {
                     filmesA.map((e, i) => (
-                        <div className="col-md-4" key={i}>
-                            <h5>
-                                {e.Title}
-                            </h5>
-                            <p>{e.Year}</p>
-                            <p>{e.Type}</p>
-                            <img src={e.Poster} />
-                        </div>
+                        <Card filmes={e} key={i}/>
+                        
                     ))
                 }
             </div>
             <div className="row">
                 {
                     filmesM.map((e, i) => (
-                        <div className="col-md-4" key={i}>
-                            <h5>
-                                {e.Title}
-                            </h5>
-                            <p> {e.Year} </p>
-                            <p> {e.Type} </p>
-                            <img src={e.Poster} />
-                        </div>
+                        <Card filmes={e} key={i}/>
                     ))
                 }
             </div>
